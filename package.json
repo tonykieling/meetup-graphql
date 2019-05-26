@@ -5,12 +5,20 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-graphql": "^0.8.0",
+    "graphql": "^14.3.1",
+    "graphql-tag": "^2.10.1",
+    "lodash": "^4.17.11",
+    "nodemon": "^1.19.1",
+    "npm-run-all": "^4.1.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start:server": "nodemon server/index.js",
+    "start:web": "react-scripts start",
+    "start": "npm-run-all --parallel start:server start:web",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
